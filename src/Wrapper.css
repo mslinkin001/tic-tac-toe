@@ -17,4 +17,5 @@ html,
   height: 500px;
   background-color: rgb(171, 28, 28);
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
