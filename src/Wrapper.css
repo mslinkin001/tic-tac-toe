@@ -15,6 +15,6 @@ html,
 .main-wrapper {
   width: 800px;
   height: 500px;
-  background-color: brown;
+  background-color: rgb(171, 28, 28);
   border-radius: 10px;
 }

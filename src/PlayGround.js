@@ -2,7 +2,21 @@ import React from "react";
 import "./PlayGround.css";
 
 function PlayGround() {
-  return <div>PlayGround</div>;
+  return (
+    <>
+      <section className="container">
+        <div className="tile"></div>
+        <div className="tile"></div>
+        <div className="tile"></div>
+        <div className="tile"></div>
+        <div className="tile"></div>
+        <div className="tile"></div>
+        <div className="tile"></div>
+        <div className="tile"></div>
+        <div className="tile"></div>
+      </section>
+    </>
+  );
 }
 
 export default PlayGround;
