@@ -5,12 +5,11 @@ import Wrapper from "./Wrapper";
 
 function App() {
   const [isPicked, setIsPicked] = useState(false);
-  const [enteredName, setenteredName] = useState(false);
+  const [enteredName, setenteredName] = useState({ player1: "", player2: "" });
 
-  const userSubmitHandler = (enteredName) => {
-    console.log(enteredName);
+  const userSubmitHandler = (enteredName1, enteredName2) => {
     setIsPicked(true);
-    setenteredName(enteredName);
+    setenteredName({ player1: enteredName1, player2: enteredName2 });
   };
   return (
     <>

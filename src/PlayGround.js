@@ -4,7 +4,9 @@ import "./PlayGround.css";
 function PlayGround(props) {
   return (
     <>
-      <div>{props.enteredName}</div>
+      <div>
+        {props.enteredName.player1} {props.enteredName.player2}
+      </div>
       <section className="container">
         <div className="tile"></div>
         <div className="tile"></div>
