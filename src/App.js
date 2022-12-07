@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import PickNamePage from "./PickNamePage";
 import PlayGround from "./PlayGround";
 import Wrapper from "./Wrapper";
 
 function App() {
+  const [isPicked, setIsPicked] = useState(false);
+  const userSubmitHandler = () => {};
   return (
     <>
       <Wrapper>
-        <PlayGround />
+        {!isPicked ? (
+          <PickNamePage submitHandler={userSubmitHandler} />
+        ) : (
+          <PlayGround />
+        )}
       </Wrapper>
     </>
   );
