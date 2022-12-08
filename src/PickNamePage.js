@@ -14,14 +14,27 @@ function PickNamePage(props) {
     <>
       <div className="pickname-container">
         <p>TIC TAC TOE GAME</p>
-        <p>Choose player's names and symbols</p>
-        <label>Player #1 Name:</label>
-        <input type="text" ref={enteredName1} />
+        <p>Choose player's name and symbol</p>
+        <div className="inner-grid">
+          <label>Player #1 Name:</label>
+          <label>Choose Symbol:</label>
 
-        <label>Player #2 Name:</label>
-        <input type="text" ref={enteredName2} />
+          <input type="text" ref={enteredName1} />
+          <select>
+            <option>X</option>
+            <option>O</option>
+          </select>
+          <label>Player #2 Name:</label>
+          <label>Choose Symbol:</label>
 
-        <button onClick={clickHandler}>Play</button>
+          <input type="text" ref={enteredName2} />
+          <select>
+            <option>X</option>
+            <option>O</option>
+          </select>
+        </div>
+
+        <button onClick={clickHandler}>START</button>
       </div>
     </>
   );
