@@ -1,0 +1,53 @@
+.pickname-container {
+  margin-top: 50px;
+  margin-left: 120px;
+  width: 70%;
+  height: 80%;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.pickname-container p {
+  padding: 10px 0 0 10px;
+  font-weight: 800;
+}
+.pickname-container label {
+  margin: 10px 0 0 10px;
+  width: 30%;
+  font-weight: 600;
+}
+.pickname-container input {
+  margin: 10px 0 0 10px;
+  width: 30%;
+  outline: none;
+  border: 2px solid #bbe4e9;
+  color: #5585b5;
+  font-size: medium;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px;
+  transition: 0.1s ease-in;
+}
+.pickname-container input:focus {
+  border: 3px solid #5585b5;
+}
+.pickname-container button {
+  margin: 20px 0 0 10px;
+  width: 20%;
+  height: 7%;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  border: none;
+  color: white;
+  background-color: #5585b5;
+  transition: 0.1s ease-in;
+}
+.pickname-container button:hover {
+  border: 2px solid white;
+}

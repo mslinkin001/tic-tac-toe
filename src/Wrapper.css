@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 body,
 html,
 #root {
   height: 100%;
+  font-family: "Poppins", sans-serif;
 }
 
 .whole-wrapper {
@@ -10,12 +13,16 @@ html,
   height: 100%;
   align-items: center;
   justify-content: center;
+  background-color: #79c2d0;
 }
 
 .main-wrapper {
   width: 800px;
   height: 500px;
-  background-color: rgb(171, 28, 28);
+  background-color: #53a8b6;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-image: url(./assets/img/main.webp);
+  background-repeat: no-repeat;
+  background-position: right center;
 }

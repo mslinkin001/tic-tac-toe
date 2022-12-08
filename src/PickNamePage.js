@@ -12,11 +12,15 @@ function PickNamePage(props) {
   };
   return (
     <>
-      <div>
+      <div className="pickname-container">
+        <p>TIC TAC TOE GAME</p>
+        <p>Choose player's names and symbols</p>
         <label>Player #1 Name:</label>
         <input type="text" ref={enteredName1} />
+
         <label>Player #2 Name:</label>
         <input type="text" ref={enteredName2} />
+
         <button onClick={clickHandler}>Play</button>
       </div>
     </>
