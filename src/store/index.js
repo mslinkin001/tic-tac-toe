@@ -6,6 +6,11 @@ const initialState = {
   player1Symbole: "",
   player2Symbol: "",
   playerTurn: "player1",
+  playMatrix: [
+    ["", "", ""], //00->tile1 01->tile2 02->tile3
+    ["", "", ""], //10->tile4 11->tile5 12->tile6
+    ["", "", ""], //20->tile7 21->tile8 22->tile9
+  ],
 };
 
 const gameStartSlice = createSlice({
@@ -21,6 +26,9 @@ const gameStartSlice = createSlice({
     },
     changeTurn(state, action) {
       state.playerTurn = action.payload.playerTurnparam;
+    },
+    winningCheck(state, action) {
+      //check the winning situation
     },
   },
 });
