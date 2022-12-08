@@ -67,4 +67,17 @@
   border-radius: 2px;
   margin: 10px 0 0 10px;
   padding: 5px;
+  color: #5585b5;
+  font-weight: 800;
+}
+.O-activated {
+  color: red;
+}
+.inner-O {
+  color: red;
+  font-weight: 800;
+}
+.inner-X {
+  color: blue;
+  font-weight: 800;
 }
