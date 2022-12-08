@@ -8,6 +8,9 @@
   color: white;
   display: flex;
   flex-direction: column;
+  background-image: url(./assets/img/main.webp);
+  background-repeat: no-repeat;
+  background-position: right center;
 }
 
 .pickname-container p {
