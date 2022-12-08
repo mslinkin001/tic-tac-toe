@@ -5,11 +5,9 @@ import Wrapper from "./Wrapper";
 
 function App() {
   const [isPicked, setIsPicked] = useState(false);
-  const [enteredName, setenteredName] = useState({ player1: "", player2: "" });
 
-  const userSubmitHandler = (enteredName1, enteredName2) => {
+  const userSubmitHandler = () => {
     setIsPicked(true);
-    setenteredName({ player1: enteredName1, player2: enteredName2 });
   };
   return (
     <>
@@ -17,7 +15,7 @@ function App() {
         {!isPicked ? (
           <PickNamePage submitHandler={userSubmitHandler} />
         ) : (
-          <PlayGround enteredName={enteredName} />
+          <PlayGround />
         )}
       </Wrapper>
     </>

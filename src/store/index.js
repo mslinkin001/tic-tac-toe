@@ -5,7 +5,7 @@ const initialState = {
   player2Name: "",
   player1Symbole: "",
   player2Symbol: "",
-  winner: "",
+  playerTurn: "player1",
 };
 
 const gameStartSlice = createSlice({
@@ -18,6 +18,9 @@ const gameStartSlice = createSlice({
       state.player2Name = action.payload.player2Nameparam;
       state.player1Symbole = action.payload.player1Symbolparam;
       state.player2Symbole = action.payload.player2Symbolparam;
+    },
+    changeTurn(state, action) {
+      state.playerTurn = action.payload.playerTurnparam;
     },
   },
 });

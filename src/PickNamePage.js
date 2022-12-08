@@ -1,7 +1,11 @@
 import React, { useRef, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { gameStartActions } from "./store/index";
 import "./PickNamePage.css";
 
 function PickNamePage(props) {
+  const dispatch = useDispatch(gameStartActions);
+
   const [isSelectClassChange, setSelectClassChange] = useState(false);
   const [isSelectClassChange2, setSelectClassChange2] = useState(false);
   const [isErrorMsg, setIsErrorMsg] = useState({
@@ -52,10 +56,15 @@ function PickNamePage(props) {
         errorMsg: "Players can not have same symbols",
       });
     } else {
-      props.submitHandler(
-        enteredName1.current.value,
-        enteredName2.current.value
+      dispatch(
+        gameStartActions.gameStart({
+          player1Nameparam: enteredName1.current.value.trim(),
+          player2Nameparam: enteredName2.current.value.trim(),
+          player1Symbolparam: player1SelectRef.current.value,
+          player2Symbolparam: player2SelectRef.current.value,
+        })
       );
+      props.submitHandler();
     }
   };
   return (
