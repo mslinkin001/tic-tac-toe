@@ -36,9 +36,9 @@
   border: 3px solid #5585b5;
 }
 .pickname-container button {
-  margin: 20px 0 0 10px;
+  margin: 10px 0 0 10px;
   width: 20%;
-  height: 7%;
+  height: 10%;
   border-radius: 3px;
   outline: none;
   cursor: pointer;
@@ -80,4 +80,8 @@
 .inner-X {
   color: blue;
   font-weight: 800;
+}
+.error-msg {
+  color: #eb2632;
+  margin: 5px;
 }
