@@ -11,6 +11,12 @@ const initialState = {
     ["", "", ""], //10->tile4 11->tile5 12->tile6
     ["", "", ""], //20->tile7 21->tile8 22->tile9
   ],
+  winningMatrix: [
+    ["", "", ""], //X symbol's Weight is 1 and O symbol's Weight is 2
+    ["", "", ""], //So the winning situation is:
+    ["", "", ""], //for X symbol sum of 1 three times = 3
+    //for O symbol sum of 2 three times = 6
+  ],
 };
 
 const gameStartSlice = createSlice({
@@ -61,6 +67,7 @@ const gameStartSlice = createSlice({
         // code block
       }
     },
+    winningCheck(state, action) {},
   },
 });
 
