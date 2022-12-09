@@ -27,14 +27,35 @@ const gameStartSlice = createSlice({
     changeTurn(state, action) {
       state.playerTurn = action.payload.playerTurnparam;
     },
-    winningCheck(state, action) {
+    gameContinue(state, action) {
       switch (action.payload.position) {
         case "tile1":
           state.playMatrix[0][0] = action.payload.playerSymbol;
 
           break;
         case "tile2":
-          // code block
+          state.playMatrix[0][1] = action.payload.playerSymbol;
+          break;
+        case "tile3":
+          state.playMatrix[0][2] = action.payload.playerSymbol;
+          break;
+        case "tile4":
+          state.playMatrix[1][0] = action.payload.playerSymbol;
+          break;
+        case "tile5":
+          state.playMatrix[1][1] = action.payload.playerSymbol;
+          break;
+        case "tile6":
+          state.playMatrix[1][2] = action.payload.playerSymbol;
+          break;
+        case "tile7":
+          state.playMatrix[2][0] = action.payload.playerSymbol;
+          break;
+        case "tile8":
+          state.playMatrix[2][1] = action.payload.playerSymbol;
+          break;
+        case "tile9":
+          state.playMatrix[2][2] = action.payload.playerSymbol;
           break;
         default:
         // code block

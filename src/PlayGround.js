@@ -22,6 +22,7 @@ function PlayGround(props) {
     (state) => state.gameStartReducer.player2Symbol
   );
   const playMatrix = useSelector((state) => state.gameStartReducer.playMatrix);
+  const wholestore = useSelector((state) => state.gameStartReducer);
 
   console.log(playMatrix);
 
@@ -30,7 +31,7 @@ function PlayGround(props) {
       case "tile1":
         if (!tileInnerHTML) {
           dispatch(
-            gameStartActions.winningCheck({
+            gameStartActions.gameContinue({
               position: "tile1",
               playerSymbol: playerSymbol,
             })
@@ -39,7 +40,92 @@ function PlayGround(props) {
         }
         break;
       case "tile2":
-        // code block
+        if (!tileInnerHTML) {
+          dispatch(
+            gameStartActions.gameContinue({
+              position: "tile2",
+              playerSymbol: playerSymbol,
+            })
+          );
+          setTileClicked(tileClicked);
+        }
+        break;
+      case "tile3":
+        if (!tileInnerHTML) {
+          dispatch(
+            gameStartActions.gameContinue({
+              position: "tile3",
+              playerSymbol: playerSymbol,
+            })
+          );
+          setTileClicked(tileClicked);
+        }
+        break;
+      case "tile4":
+        if (!tileInnerHTML) {
+          dispatch(
+            gameStartActions.gameContinue({
+              position: "tile4",
+              playerSymbol: playerSymbol,
+            })
+          );
+          setTileClicked(tileClicked);
+        }
+        break;
+      case "tile5":
+        if (!tileInnerHTML) {
+          dispatch(
+            gameStartActions.gameContinue({
+              position: "tile5",
+              playerSymbol: playerSymbol,
+            })
+          );
+          setTileClicked(tileClicked);
+        }
+        break;
+      case "tile6":
+        if (!tileInnerHTML) {
+          dispatch(
+            gameStartActions.gameContinue({
+              position: "tile6",
+              playerSymbol: playerSymbol,
+            })
+          );
+          setTileClicked(tileClicked);
+        }
+        break;
+      case "tile7":
+        if (!tileInnerHTML) {
+          dispatch(
+            gameStartActions.gameContinue({
+              position: "tile7",
+              playerSymbol: playerSymbol,
+            })
+          );
+          setTileClicked(tileClicked);
+        }
+        break;
+      case "tile8":
+        if (!tileInnerHTML) {
+          dispatch(
+            gameStartActions.gameContinue({
+              position: "tile8",
+              playerSymbol: playerSymbol,
+            })
+          );
+          setTileClicked(tileClicked);
+        }
+        break;
+      case "tile9":
+        if (!tileInnerHTML) {
+          dispatch(
+            gameStartActions.gameContinue({
+              position: "tile9",
+              playerSymbol: playerSymbol,
+            })
+          );
+          setTileClicked(tileClicked);
+        }
         break;
       default:
       // code block
@@ -47,23 +133,24 @@ function PlayGround(props) {
   };
 
   const playClickHandler = (e) => {
-    console.log(e.target.id);
-    console.log(e.target.innerHTML);
-
-    if (playerTurn === "player1") {
-      playProcess(e.target.id, e.target.innerHTML, player1Symbol);
-      dispatch(
-        gameStartActions.changeTurn({
-          playerTurnparam: "player2",
-        })
-      );
-    } else if (playerTurn === "player2") {
-      playProcess(e.target.id, e.target.innerHTML, player2Symbol);
-      dispatch(
-        gameStartActions.changeTurn({
-          playerTurnparam: "player1",
-        })
-      );
+    e.preventDefault();
+    if (!e.target.innerHTML) {
+      if (playerTurn === "player1") {
+        playProcess(e.target.id, e.target.innerHTML, player1Symbol);
+        dispatch(
+          gameStartActions.changeTurn({
+            playerTurnparam: "player2",
+          })
+        );
+      } else if (playerTurn === "player2") {
+        playProcess(e.target.id, e.target.innerHTML, player2Symbol);
+        dispatch(
+          gameStartActions.changeTurn({
+            playerTurnparam: "player1",
+          })
+        );
+      }
+      console.log(wholestore);
     }
   };
 
