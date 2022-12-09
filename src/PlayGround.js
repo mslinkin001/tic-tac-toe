@@ -52,7 +52,18 @@ function PlayGround(props) {
 
     if (playerTurn === "player1") {
       playProcess(e.target.id, e.target.innerHTML, player1Symbol);
-    } else {
+      dispatch(
+        gameStartActions.changeTurn({
+          playerTurnparam: "player2",
+        })
+      );
+    } else if (playerTurn === "player2") {
+      playProcess(e.target.id, e.target.innerHTML, player2Symbol);
+      dispatch(
+        gameStartActions.changeTurn({
+          playerTurnparam: "player1",
+        })
+      );
     }
   };
 
@@ -66,28 +77,28 @@ function PlayGround(props) {
           {tileClicked ? playMatrix[0][0] : ""}
         </div>
         <div className="tile" onClick={playClickHandler} id="tile2">
-          2
+          {tileClicked ? playMatrix[0][1] : ""}
         </div>
         <div className="tile" onClick={playClickHandler} id="tile3">
-          3
+          {tileClicked ? playMatrix[0][2] : ""}
         </div>
         <div className="tile" onClick={playClickHandler} id="tile4">
-          4
+          {tileClicked ? playMatrix[1][0] : ""}
         </div>
         <div className="tile" onClick={playClickHandler} id="tile5">
-          5
+          {tileClicked ? playMatrix[1][1] : ""}
         </div>
         <div className="tile" onClick={playClickHandler} id="tile6">
-          6
+          {tileClicked ? playMatrix[1][2] : ""}
         </div>
         <div className="tile" onClick={playClickHandler} id="tile7">
-          7
+          {tileClicked ? playMatrix[2][0] : ""}
         </div>
         <div className="tile" onClick={playClickHandler} id="tile8">
-          8
+          {tileClicked ? playMatrix[2][1] : ""}
         </div>
         <div className="tile" onClick={playClickHandler} id="tile9">
-          9
+          {tileClicked ? playMatrix[2][2] : ""}
         </div>
       </section>
     </>
