@@ -73,7 +73,7 @@ function PickNamePage(props) {
         <p>TIC TAC TOE GAME</p>
         <p>Choose player's name and symbol</p>
         <div className="inner-grid">
-          <label>Player #1 Name:</label>
+          <label>Player#1 Name:</label>
           <label>Choose Symbol:</label>
 
           <input type="text" ref={enteredName1} />
@@ -85,7 +85,7 @@ function PickNamePage(props) {
             <option className="inner-X">X</option>
             <option className="inner-O">O</option>
           </select>
-          <label>Player #2 Name:</label>
+          <label>Player#2 Name:</label>
           <label>Choose Symbol:</label>
 
           <input type="text" ref={enteredName2} />

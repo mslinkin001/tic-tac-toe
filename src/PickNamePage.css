@@ -88,3 +88,42 @@
   color: #eb2632;
   margin: 5px;
 }
+@media only screen and (max-width: 800px) {
+  .pickname-container {
+    background-position: bottom center;
+    margin-left: 50px;
+    margin-top: 5px;
+    height: 100%;
+  }
+  .pickname-container p {
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .pickname-container label {
+    width: 50%;
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .inner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    white-space: break-spaces;
+  }
+  .inner-grid select {
+    width: 50%;
+  }
+  .pickname-container button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 7%;
+    border-radius: 3px;
+    align-self: center;
+  }
+  .error-msg {
+    font-size: 12px;
+  }
+}
