@@ -33,7 +33,24 @@ function PlayGround() {
   const wholestore = useSelector((state) => state.gameStartReducer);
 
   // console.log(playMatrix, currentTile);
+  const gameEndsDraw = (playMatrix) => {
+    let sum = 0;
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (playMatrix[i][j] !== "") {
+          sum = sum + 1;
+        }
+      }
+    }
+    if (sum === 9) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
+  const endsDraw = gameEndsDraw(playMatrix);
+  console.log(endsDraw);
   useEffect(() => {
     const result = winCheckFunc(currentTile, playMatrix);
     if (result) {
@@ -269,7 +286,15 @@ function PlayGround() {
           </div>
         </section>
         <section className="play-info">
-          {winnerFound && gameOverMsg ? (
+          {endsDraw ? (
+            <>
+              {" "}
+              <span className="remained-text">Draw, please Start Over</span>
+              <button className="reset-btn" onClick={restartHandler}>
+                Restart the game
+              </button>
+            </>
+          ) : winnerFound && gameOverMsg ? (
             <>
               <span className="remained-text">
                 {player1Symbol === gameOverMsg[0]
