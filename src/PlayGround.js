@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { gameStartActions } from "./store/index";
 import { winCheckFunc } from "./winningFunc";
@@ -32,12 +32,13 @@ function PlayGround() {
   const wholestore = useSelector((state) => state.gameStartReducer);
 
   // console.log(playMatrix, currentTile);
-
-  const result = winCheckFunc(currentTile, playMatrix);
-  if (result) {
-    dispatch(gameStartActions.winningFound());
-  }
-  console.log(result);
+  useEffect(() => {
+    const result = winCheckFunc(currentTile, playMatrix);
+    if (result) {
+      dispatch(gameStartActions.winningFound());
+    }
+    console.log(result);
+  });
 
   const playProcess = (tileClicked, tileInnerHTML, playerSymbol) => {
     switch (tileClicked) {
