@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { gameStartActions } from "./store/index";
 import "./PickNamePage.css";
 

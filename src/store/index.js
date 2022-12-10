@@ -77,7 +77,9 @@ const gameStartSlice = createSlice({
         // code block
       }
     },
-    winningCheck(state, action) {},
+    winningFound(state) {
+      state.winnerFound = true;
+    },
   },
 });
 

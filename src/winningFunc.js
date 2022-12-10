@@ -2,52 +2,108 @@ export const winCheckFunc = (tileNumber, playMatrix) => {
   console.log(tileNumber, playMatrix);
   switch (tileNumber) {
     case "tile1":
-      console.log(
-        rowCheck(playMatrix, 1),
-        columnCheck(playMatrix, 1),
-        mainDiagonalCheck(playMatrix)
-      );
+      const result1 = rowCheck(playMatrix, 1);
+      const result2 = columnCheck(playMatrix, 1);
+      const result3 = mainDiagonalCheck(playMatrix);
+      if (result1) {
+        return result1;
+      } else if (result2) {
+        return result2;
+      } else if (result3) {
+        return result3;
+      }
+
       break;
     case "tile2":
-      console.log(rowCheck(playMatrix, 1), columnCheck(playMatrix, 2));
+      const result4 = rowCheck(playMatrix, 1);
+      const result5 = columnCheck(playMatrix, 2);
+      if (result4) {
+        return result4;
+      } else if (result5) {
+        return result5;
+      }
       break;
     case "tile3":
-      console.log(
-        rowCheck(playMatrix, 1),
-        columnCheck(playMatrix, 3),
-        antiDiagonalCheck(playMatrix)
-      );
+      const result6 = rowCheck(playMatrix, 1);
+      const result7 = columnCheck(playMatrix, 3);
+      const result8 = antiDiagonalCheck(playMatrix);
+      if (result6) {
+        return result6;
+      } else if (result7) {
+        return result7;
+      } else if (result8) {
+        return result8;
+      }
+
       break;
     case "tile4":
-      console.log(rowCheck(playMatrix, 2), columnCheck(playMatrix, 1));
+      const result9 = rowCheck(playMatrix, 2);
+      const result10 = columnCheck(playMatrix, 1);
+      if (result9) {
+        return result9;
+      } else if (result10) {
+        return result10;
+      }
       break;
     case "tile5":
-      console.log(
-        rowCheck(playMatrix, 2),
-        columnCheck(playMatrix, 2),
-        antiDiagonalCheck(playMatrix),
-        mainDiagonalCheck(playMatrix)
-      );
+      const result11 = rowCheck(playMatrix, 2);
+      const result12 = columnCheck(playMatrix, 2);
+      const result13 = antiDiagonalCheck(playMatrix);
+      const result14 = mainDiagonalCheck(playMatrix);
+      if (result11) {
+        return result11;
+      } else if (result12) {
+        return result12;
+      } else if (result13) {
+        return result13;
+      } else if (result14) {
+        return result14;
+      }
+
       break;
     case "tile6":
-      console.log(rowCheck(playMatrix, 2), columnCheck(playMatrix, 3));
+      const result15 = rowCheck(playMatrix, 2);
+      const result16 = columnCheck(playMatrix, 3);
+      if (result15) {
+        return result15;
+      } else if (result16) {
+        return result16;
+      }
       break;
     case "tile7":
-      console.log(
-        rowCheck(playMatrix, 3),
-        columnCheck(playMatrix, 1),
-        antiDiagonalCheck(playMatrix)
-      );
+      const result17 = rowCheck(playMatrix, 3);
+      const result18 = columnCheck(playMatrix, 1);
+      const result19 = antiDiagonalCheck(playMatrix);
+      if (result17) {
+        return result17;
+      } else if (result18) {
+        return result18;
+      } else if (result19) {
+        return result19;
+      }
+
       break;
     case "tile8":
-      console.log(rowCheck(playMatrix, 3), columnCheck(playMatrix, 2));
+      const result20 = rowCheck(playMatrix, 3);
+      const result21 = columnCheck(playMatrix, 2);
+      if (result20) {
+        return result20;
+      } else if (result21) {
+        return result21;
+      }
       break;
     case "tile9":
-      console.log(
-        rowCheck(playMatrix, 3),
-        columnCheck(playMatrix, 3),
-        mainDiagonalCheck(playMatrix)
-      );
+      const result22 = rowCheck(playMatrix, 3);
+      const result23 = columnCheck(playMatrix, 3);
+      const result24 = mainDiagonalCheck(playMatrix);
+      if (result22) {
+        return result22;
+      } else if (result23) {
+        return result23;
+      } else if (result24) {
+        return result24;
+      }
+
       break;
     default:
   }

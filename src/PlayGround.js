@@ -5,7 +5,7 @@ import { winCheckFunc } from "./winningFunc";
 
 import "./PlayGround.css";
 
-function PlayGround(props) {
+function PlayGround() {
   const [tileClicked, setTileClicked] = useState(false);
 
   const dispatch = useDispatch(gameStartActions);
@@ -32,8 +32,12 @@ function PlayGround(props) {
   const wholestore = useSelector((state) => state.gameStartReducer);
 
   // console.log(playMatrix, currentTile);
+
   const result = winCheckFunc(currentTile, playMatrix);
-  // console.log(result);
+  if (result) {
+    dispatch(gameStartActions.winningFound());
+  }
+  console.log(result);
 
   const playProcess = (tileClicked, tileInnerHTML, playerSymbol) => {
     switch (tileClicked) {
@@ -45,6 +49,7 @@ function PlayGround(props) {
               playerSymbol: playerSymbol,
             })
           );
+
           setTileClicked(tileClicked);
         }
         break;
@@ -166,8 +171,24 @@ function PlayGround(props) {
 
   return (
     <>
-      <div>
-        {player1Name} {player2Name}
+      <div className="players-info">
+        <span
+          className={`players-name ${
+            player1Symbol === "X" ? "tile-X" : "tile-O"
+          }`}
+        >
+          {player1Name}
+        </span>
+        {"    "}
+        vs.
+        <span
+          className={`players-name ${
+            player2Symbol === "X" ? "tile-X" : "tile-O"
+          }`}
+        >
+          {"    "}
+          {player2Name}
+        </span>
       </div>
       <section
         style={{ pointerEvents: winnerFound ? "none" : "" }} //this will disable the playground when a player wins
