@@ -9,6 +9,9 @@ function PlayGround(props) {
   const [tileClicked, setTileClicked] = useState(false);
 
   const dispatch = useDispatch(gameStartActions);
+  const winnerFound = useSelector(
+    (state) => state.gameStartReducer.winnerFound
+  );
   const player1Name = useSelector(
     (state) => state.gameStartReducer.player1Name
   );
@@ -166,32 +169,71 @@ function PlayGround(props) {
       <div>
         {player1Name} {player2Name}
       </div>
-      <section className="container">
-        <div className="tile" onClick={playClickHandler} id="tile1">
+      <section
+        style={{ pointerEvents: winnerFound ? "none" : "" }} //this will disable the playground when a player wins
+        className="container"
+      >
+        <div
+          className={`tile ${playMatrix[0][0] === "X" ? "tile-X" : "tile-O"}`}
+          onClick={playClickHandler}
+          id="tile1"
+        >
           {tileClicked ? playMatrix[0][0] : ""}
         </div>
-        <div className="tile" onClick={playClickHandler} id="tile2">
+        <div
+          className={`tile ${playMatrix[0][1] === "X" ? "tile-X" : "tile-O"}`}
+          onClick={playClickHandler}
+          id="tile2"
+        >
           {tileClicked ? playMatrix[0][1] : ""}
         </div>
-        <div className="tile" onClick={playClickHandler} id="tile3">
+        <div
+          className={`tile ${playMatrix[0][2] === "X" ? "tile-X" : "tile-O"}`}
+          onClick={playClickHandler}
+          id="tile3"
+        >
           {tileClicked ? playMatrix[0][2] : ""}
         </div>
-        <div className="tile" onClick={playClickHandler} id="tile4">
+        <div
+          className={`tile ${playMatrix[1][0] === "X" ? "tile-X" : "tile-O"}`}
+          onClick={playClickHandler}
+          id="tile4"
+        >
           {tileClicked ? playMatrix[1][0] : ""}
         </div>
-        <div className="tile" onClick={playClickHandler} id="tile5">
+        <div
+          className={`tile ${playMatrix[1][1] === "X" ? "tile-X" : "tile-O"}`}
+          onClick={playClickHandler}
+          id="tile5"
+        >
           {tileClicked ? playMatrix[1][1] : ""}
         </div>
-        <div className="tile" onClick={playClickHandler} id="tile6">
+        <div
+          className={`tile ${playMatrix[1][2] === "X" ? "tile-X" : "tile-O"}`}
+          onClick={playClickHandler}
+          id="tile6"
+        >
           {tileClicked ? playMatrix[1][2] : ""}
         </div>
-        <div className="tile" onClick={playClickHandler} id="tile7">
+        <div
+          className={`tile ${playMatrix[2][0] === "X" ? "tile-X" : "tile-O"}`}
+          onClick={playClickHandler}
+          id="tile7"
+        >
           {tileClicked ? playMatrix[2][0] : ""}
         </div>
-        <div className="tile" onClick={playClickHandler} id="tile8">
+        <div
+          className={`tile ${playMatrix[2][1] === "X" ? "tile-X" : "tile-O"}`}
+          onClick={playClickHandler}
+          id="tile8"
+        >
           {tileClicked ? playMatrix[2][1] : ""}
         </div>
-        <div className="tile" onClick={playClickHandler} id="tile9">
+        <div
+          className={`tile ${playMatrix[2][2] === "X" ? "tile-X" : "tile-O"}`}
+          onClick={playClickHandler}
+          id="tile9"
+        >
           {tileClicked ? playMatrix[2][2] : ""}
         </div>
       </section>

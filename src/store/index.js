@@ -7,6 +7,7 @@ const initialState = {
   player2Symbol: "",
   playerTurn: "player1",
   currentTile: "",
+  winnerFound: false,
   playMatrix: [
     ["", "", ""], //00->tile1 01->tile2 02->tile3
     ["", "", ""], //10->tile4 11->tile5 12->tile6
