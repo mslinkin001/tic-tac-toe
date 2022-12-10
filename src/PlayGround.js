@@ -191,74 +191,89 @@ function PlayGround() {
           {player2Name}
         </span>
       </div>
-      <section
-        style={{ pointerEvents: winnerFound ? "none" : "" }} //this will disable the playground when a player wins
-        className="container"
-      >
-        <div
-          className={`tile ${playMatrix[0][0] === "X" ? "tile-X" : "tile-O"}`}
-          onClick={playClickHandler}
-          id="tile1"
+      <div className="play-wrapper">
+        <section
+          style={{ pointerEvents: winnerFound ? "none" : "" }} //this will disable the playground when a player wins
+          className="container"
         >
-          {tileClicked ? playMatrix[0][0] : ""}
-        </div>
-        <div
-          className={`tile ${playMatrix[0][1] === "X" ? "tile-X" : "tile-O"}`}
-          onClick={playClickHandler}
-          id="tile2"
-        >
-          {tileClicked ? playMatrix[0][1] : ""}
-        </div>
-        <div
-          className={`tile ${playMatrix[0][2] === "X" ? "tile-X" : "tile-O"}`}
-          onClick={playClickHandler}
-          id="tile3"
-        >
-          {tileClicked ? playMatrix[0][2] : ""}
-        </div>
-        <div
-          className={`tile ${playMatrix[1][0] === "X" ? "tile-X" : "tile-O"}`}
-          onClick={playClickHandler}
-          id="tile4"
-        >
-          {tileClicked ? playMatrix[1][0] : ""}
-        </div>
-        <div
-          className={`tile ${playMatrix[1][1] === "X" ? "tile-X" : "tile-O"}`}
-          onClick={playClickHandler}
-          id="tile5"
-        >
-          {tileClicked ? playMatrix[1][1] : ""}
-        </div>
-        <div
-          className={`tile ${playMatrix[1][2] === "X" ? "tile-X" : "tile-O"}`}
-          onClick={playClickHandler}
-          id="tile6"
-        >
-          {tileClicked ? playMatrix[1][2] : ""}
-        </div>
-        <div
-          className={`tile ${playMatrix[2][0] === "X" ? "tile-X" : "tile-O"}`}
-          onClick={playClickHandler}
-          id="tile7"
-        >
-          {tileClicked ? playMatrix[2][0] : ""}
-        </div>
-        <div
-          className={`tile ${playMatrix[2][1] === "X" ? "tile-X" : "tile-O"}`}
-          onClick={playClickHandler}
-          id="tile8"
-        >
-          {tileClicked ? playMatrix[2][1] : ""}
-        </div>
-        <div
-          className={`tile ${playMatrix[2][2] === "X" ? "tile-X" : "tile-O"}`}
-          onClick={playClickHandler}
-          id="tile9"
-        >
-          {tileClicked ? playMatrix[2][2] : ""}
-        </div>
-      </section>
+          <div
+            className={`tile ${playMatrix[0][0] === "X" ? "tile-X" : "tile-O"}`}
+            onClick={playClickHandler}
+            id="tile1"
+          >
+            {tileClicked ? playMatrix[0][0] : ""}
+          </div>
+          <div
+            className={`tile ${playMatrix[0][1] === "X" ? "tile-X" : "tile-O"}`}
+            onClick={playClickHandler}
+            id="tile2"
+          >
+            {tileClicked ? playMatrix[0][1] : ""}
+          </div>
+          <div
+            className={`tile ${playMatrix[0][2] === "X" ? "tile-X" : "tile-O"}`}
+            onClick={playClickHandler}
+            id="tile3"
+          >
+            {tileClicked ? playMatrix[0][2] : ""}
+          </div>
+          <div
+            className={`tile ${playMatrix[1][0] === "X" ? "tile-X" : "tile-O"}`}
+            onClick={playClickHandler}
+            id="tile4"
+          >
+            {tileClicked ? playMatrix[1][0] : ""}
+          </div>
+          <div
+            className={`tile ${playMatrix[1][1] === "X" ? "tile-X" : "tile-O"}`}
+            onClick={playClickHandler}
+            id="tile5"
+          >
+            {tileClicked ? playMatrix[1][1] : ""}
+          </div>
+          <div
+            className={`tile ${playMatrix[1][2] === "X" ? "tile-X" : "tile-O"}`}
+            onClick={playClickHandler}
+            id="tile6"
+          >
+            {tileClicked ? playMatrix[1][2] : ""}
+          </div>
+          <div
+            className={`tile ${playMatrix[2][0] === "X" ? "tile-X" : "tile-O"}`}
+            onClick={playClickHandler}
+            id="tile7"
+          >
+            {tileClicked ? playMatrix[2][0] : ""}
+          </div>
+          <div
+            className={`tile ${playMatrix[2][1] === "X" ? "tile-X" : "tile-O"}`}
+            onClick={playClickHandler}
+            id="tile8"
+          >
+            {tileClicked ? playMatrix[2][1] : ""}
+          </div>
+          <div
+            className={`tile ${playMatrix[2][2] === "X" ? "tile-X" : "tile-O"}`}
+            onClick={playClickHandler}
+            id="tile9"
+          >
+            {tileClicked ? playMatrix[2][2] : ""}
+          </div>
+        </section>
+        <section className="play-info">
+          <span className="remained-text">Now it's </span>
+          <span
+            className={`players-name ${
+              playerTurn === "player1"
+                ? `tile-` + player1Symbol
+                : `tile-` + player2Symbol
+            }`}
+          >
+            {playerTurn === "player1" ? player1Name : player2Name}
+          </span>
+          <span className="remained-text">'s Turn'`</span>
+        </section>
+      </div>
     </>
   );
 }

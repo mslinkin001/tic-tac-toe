@@ -13,12 +13,12 @@ const initialState = {
     ["", "", ""], //10->tile4 11->tile5 12->tile6
     ["", "", ""], //20->tile7 21->tile8 22->tile9
   ],
-  winningMatrix: [
-    ["", "", ""], //X symbol's Weight is 2 and O symbol's Weight is 3
-    ["", "", ""], //So the winning situation is:
-    ["", "", ""], //for X symbol multiply of 2 three times = 8
-    //for O symbol multiply of 3 three times = 27
-  ],
+  //X symbol's Weight is 2 and O symbol's Weight is 3
+  //So the winning situation is:
+  //for X symbol multiply of 2 * 2 * 2 = 8
+  //for O symbol multiply of 3 * 3 * 3 = 27
+  //in each row and column and also in main diagonal and the anti diagonal
+  //the mentioned conditions must meet for a player to win the game
 };
 
 const gameStartSlice = createSlice({

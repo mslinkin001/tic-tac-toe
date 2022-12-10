@@ -40,3 +40,14 @@
 .players-name {
   font-weight: bold;
 }
+.play-wrapper {
+  display: flex;
+}
+.play-info {
+  margin-left: 100px;
+  margin-top: 100px;
+  font-size: 30px;
+}
+.remained-text {
+  color: white;
+}
