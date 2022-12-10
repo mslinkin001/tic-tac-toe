@@ -7,6 +7,7 @@ import "./PlayGround.css";
 
 function PlayGround() {
   const [tileClicked, setTileClicked] = useState(false);
+  const [gameOverMsg, setGameOverMsg] = useState("");
 
   const dispatch = useDispatch(gameStartActions);
   const winnerFound = useSelector(
@@ -32,10 +33,13 @@ function PlayGround() {
   const wholestore = useSelector((state) => state.gameStartReducer);
 
   // console.log(playMatrix, currentTile);
+
   useEffect(() => {
     const result = winCheckFunc(currentTile, playMatrix);
     if (result) {
+      //rersult indicates that the game is over
       dispatch(gameStartActions.winningFound());
+      setGameOverMsg(result);
     }
     console.log(result);
   });
@@ -170,6 +174,10 @@ function PlayGround() {
     }
   };
 
+  const restartHandler = (e) => {
+    e.preventDefault();
+    dispatch(gameStartActions.gameRestart());
+  };
   return (
     <>
       <div className="players-info">
@@ -261,17 +269,32 @@ function PlayGround() {
           </div>
         </section>
         <section className="play-info">
-          <span className="remained-text">Now it's </span>
-          <span
-            className={`players-name ${
-              playerTurn === "player1"
-                ? `tile-` + player1Symbol
-                : `tile-` + player2Symbol
-            }`}
-          >
-            {playerTurn === "player1" ? player1Name : player2Name}
-          </span>
-          <span className="remained-text">'s Turn'`</span>
+          {winnerFound && gameOverMsg ? (
+            <>
+              <span className="remained-text">
+                {player1Symbol === gameOverMsg[0]
+                  ? player1Name + " wins the game"
+                  : player2Name + " wins the game"}
+              </span>
+              <button className="reset-btn" onClick={restartHandler}>
+                Restart the game
+              </button>
+            </>
+          ) : (
+            <>
+              <span className="remained-text">Now it's </span>
+              <span
+                className={`players-name ${
+                  playerTurn === "player1"
+                    ? `tile-` + player1Symbol
+                    : `tile-` + player2Symbol
+                }`}
+              >
+                {playerTurn === "player1" ? player1Name : player2Name}
+              </span>
+              <span className="remained-text"> Turn</span>
+            </>
+          )}
         </section>
       </div>
     </>

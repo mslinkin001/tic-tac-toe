@@ -51,3 +51,16 @@
 .remained-text {
   color: white;
 }
+.reset-btn {
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  border: none;
+  color: white;
+  background-color: #dc3535;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 10px;
+}

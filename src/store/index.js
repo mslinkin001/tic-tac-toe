@@ -6,8 +6,10 @@ const initialState = {
   player1Symbol: "",
   player2Symbol: "",
   playerTurn: "player1",
+  gameStart: false,
   currentTile: "",
   winnerFound: false,
+  endGameMessage: "",
   playMatrix: [
     ["", "", ""], //00->tile1 01->tile2 02->tile3
     ["", "", ""], //10->tile4 11->tile5 12->tile6
@@ -25,6 +27,9 @@ const gameStartSlice = createSlice({
   name: "gameInfo",
   initialState: initialState,
   reducers: {
+    gameStartTriggrer(state) {
+      state.gameStart = true;
+    },
     gameStart(state, action) {
       console.log(action.payload);
       state.player1Name = action.payload.player1Nameparam;
@@ -34,6 +39,22 @@ const gameStartSlice = createSlice({
     },
     changeTurn(state, action) {
       state.playerTurn = action.payload.playerTurnparam;
+    },
+    gameRestart(state) {
+      state.player1Name = "";
+      state.player2Name = "";
+      state.player1Symbol = "";
+      state.player2Symbol = "";
+      state.playerTurn = "player1";
+      state.gameStart = false;
+      state.currentTile = "";
+      state.winnerFound = false;
+      state.endGameMessage = "";
+      state.playMatrix = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""],
+      ];
     },
     gameContinue(state, action) {
       switch (action.payload.position) {

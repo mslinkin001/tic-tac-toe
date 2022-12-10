@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import PickNamePage from "./PickNamePage";
 import PlayGround from "./PlayGround";
 import Wrapper from "./Wrapper";
+import { useSelector, useDispatch } from "react-redux";
+import { gameStartActions } from "./store/index";
 
 function App() {
-  const [isPicked, setIsPicked] = useState(false);
+  const dispatch = useDispatch(gameStartActions);
+  const gameStart = useSelector((state) => state.gameStartReducer.gameStart);
 
   const userSubmitHandler = () => {
-    setIsPicked(true);
+    dispatch(gameStartActions.gameStartTriggrer());
   };
   return (
     <>
       <Wrapper>
-        {!isPicked ? (
+        {!gameStart ? (
           <PickNamePage submitHandler={userSubmitHandler} />
         ) : (
           <PlayGround />
