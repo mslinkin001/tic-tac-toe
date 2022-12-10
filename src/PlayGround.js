@@ -28,9 +28,9 @@ function PlayGround(props) {
   const playMatrix = useSelector((state) => state.gameStartReducer.playMatrix);
   const wholestore = useSelector((state) => state.gameStartReducer);
 
-  console.log(playMatrix, currentTile);
+  // console.log(playMatrix, currentTile);
   const result = winCheckFunc(currentTile, playMatrix);
-  console.log(result);
+  // console.log(result);
 
   const playProcess = (tileClicked, tileInnerHTML, playerSymbol) => {
     switch (tileClicked) {

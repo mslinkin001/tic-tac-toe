@@ -13,10 +13,10 @@ const initialState = {
     ["", "", ""], //20->tile7 21->tile8 22->tile9
   ],
   winningMatrix: [
-    ["", "", ""], //X symbol's Weight is 1 and O symbol's Weight is 2
+    ["", "", ""], //X symbol's Weight is 2 and O symbol's Weight is 3
     ["", "", ""], //So the winning situation is:
-    ["", "", ""], //for X symbol sum of 1 three times = 3
-    //for O symbol sum of 2 three times = 6
+    ["", "", ""], //for X symbol multiply of 2 three times = 8
+    //for O symbol multiply of 3 three times = 27
   ],
 };
 
