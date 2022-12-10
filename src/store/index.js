@@ -6,6 +6,7 @@ const initialState = {
   player1Symbol: "",
   player2Symbol: "",
   playerTurn: "player1",
+  currentTile: "",
   playMatrix: [
     ["", "", ""], //00->tile1 01->tile2 02->tile3
     ["", "", ""], //10->tile4 11->tile5 12->tile6
@@ -37,31 +38,39 @@ const gameStartSlice = createSlice({
       switch (action.payload.position) {
         case "tile1":
           state.playMatrix[0][0] = action.payload.playerSymbol;
-
+          state.currentTile = action.payload.position;
           break;
         case "tile2":
           state.playMatrix[0][1] = action.payload.playerSymbol;
+          state.currentTile = action.payload.position;
           break;
         case "tile3":
           state.playMatrix[0][2] = action.payload.playerSymbol;
+          state.currentTile = action.payload.position;
           break;
         case "tile4":
           state.playMatrix[1][0] = action.payload.playerSymbol;
+          state.currentTile = action.payload.position;
           break;
         case "tile5":
           state.playMatrix[1][1] = action.payload.playerSymbol;
+          state.currentTile = action.payload.position;
           break;
         case "tile6":
           state.playMatrix[1][2] = action.payload.playerSymbol;
+          state.currentTile = action.payload.position;
           break;
         case "tile7":
           state.playMatrix[2][0] = action.payload.playerSymbol;
+          state.currentTile = action.payload.position;
           break;
         case "tile8":
           state.playMatrix[2][1] = action.payload.playerSymbol;
+          state.currentTile = action.payload.position;
           break;
         case "tile9":
           state.playMatrix[2][2] = action.payload.playerSymbol;
+          state.currentTile = action.payload.position;
           break;
         default:
         // code block

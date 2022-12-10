@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { gameStartActions } from "./store/index";
+import { winCheckFunc } from "./winningFunc";
 
 import "./PlayGround.css";
 
@@ -10,6 +11,9 @@ function PlayGround(props) {
   const dispatch = useDispatch(gameStartActions);
   const player1Name = useSelector(
     (state) => state.gameStartReducer.player1Name
+  );
+  const currentTile = useSelector(
+    (state) => state.gameStartReducer.currentTile
   );
   const player2Name = useSelector(
     (state) => state.gameStartReducer.player2Name
@@ -24,7 +28,9 @@ function PlayGround(props) {
   const playMatrix = useSelector((state) => state.gameStartReducer.playMatrix);
   const wholestore = useSelector((state) => state.gameStartReducer);
 
-  console.log(playMatrix);
+  console.log(playMatrix, currentTile);
+  const result = winCheckFunc(currentTile, playMatrix);
+  console.log(result);
 
   const playProcess = (tileClicked, tileInnerHTML, playerSymbol) => {
     switch (tileClicked) {
@@ -149,6 +155,7 @@ function PlayGround(props) {
             playerTurnparam: "player1",
           })
         );
+        console.log(playMatrix, e.target.id);
       }
       console.log(wholestore);
     }
