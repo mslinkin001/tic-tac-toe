@@ -64,3 +64,37 @@
   border-radius: 5px;
   margin-top: 10px;
 }
+@media only screen and (max-width: 810px) {
+  .play-wrapper {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .container {
+    margin-top: 30px;
+    margin-left: 2px;
+    max-width: 250px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .tile {
+    align-self: center;
+    justify-self: center;
+  }
+  .play-info {
+    margin-left: 70px;
+    margin-top: 40px;
+    font-size: 30px;
+  }
+  .reset-btn {
+    margin-left: 40px;
+  }
+  .remained-text {
+    margin-right: 10px;
+    font-size: 25px;
+  }
+  .players-name {
+    font-size: 25px;
+  }
+}
