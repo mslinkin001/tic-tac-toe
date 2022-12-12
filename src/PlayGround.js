@@ -50,11 +50,12 @@ function PlayGround() {
   };
 
   const endsDraw = gameEndsDraw(playMatrix);
+
   console.log(endsDraw);
   useEffect(() => {
     const result = winCheckFunc(currentTile, playMatrix);
     if (result) {
-      //rersult indicates that the game is over
+      //result indicates that the game is over
       dispatch(gameStartActions.winningFound());
       setGameOverMsg(result);
     }
@@ -286,7 +287,7 @@ function PlayGround() {
           </div>
         </section>
         <section className="play-info">
-          {endsDraw ? (
+          {endsDraw && !winnerFound ? (
             <>
               {" "}
               <span className="remained-text">Draw, please Start Over</span>
