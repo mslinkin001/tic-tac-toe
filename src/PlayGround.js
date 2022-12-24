@@ -318,7 +318,7 @@ function PlayGround() {
               >
                 {playerTurn === "player1" ? player1Name : player2Name}
               </span>
-              <span className="remained-text"> Turn</span>
+              <span className="remained-text-turn"> Turn</span>
             </>
           )}
         </section>
