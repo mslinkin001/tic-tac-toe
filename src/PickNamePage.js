@@ -99,7 +99,7 @@ function PickNamePage(props) {
           </select>
         </div>
         {isErrorMsg.isError ? (
-          <p className="error-msg">{isErrorMsg.errorMsg}</p>
+          <span className="error-msg">{isErrorMsg.errorMsg}</span>
         ) : (
           ""
         )}
