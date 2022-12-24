@@ -200,7 +200,7 @@ function PlayGround() {
     <>
       <div className="players-info">
         <span
-          className={`players-name ${
+          className={`players-name-title ${
             player1Symbol === "X" ? "tile-X" : "tile-O"
           }`}
         >
@@ -209,7 +209,7 @@ function PlayGround() {
         {"    "}
         vs.
         <span
-          className={`players-name ${
+          className={`players-name-title ${
             player2Symbol === "X" ? "tile-X" : "tile-O"
           }`}
         >
@@ -290,14 +290,16 @@ function PlayGround() {
           {endsDraw && !winnerFound ? (
             <>
               {" "}
-              <span className="remained-text">Draw, please Start Over</span>
+              <span className="remained-text draw">
+                Draw, please Start Over
+              </span>
               <button className="reset-btn" onClick={restartHandler}>
                 Restart the game
               </button>
             </>
           ) : winnerFound && gameOverMsg ? (
             <>
-              <span className="remained-text">
+              <span className="remained-text win">
                 {player1Symbol === gameOverMsg[0]
                   ? player1Name + " wins the game"
                   : player2Name + " wins the game"}
@@ -308,17 +310,19 @@ function PlayGround() {
             </>
           ) : (
             <>
-              <span className="remained-text">Now it's </span>
-              <span
-                className={`players-name ${
-                  playerTurn === "player1"
-                    ? `tile-` + player1Symbol
-                    : `tile-` + player2Symbol
-                }`}
-              >
-                {playerTurn === "player1" ? player1Name : player2Name}
+              <span className="remained-text turn">
+                Now it's{" "}
+                <span
+                  className={`players-name ${
+                    playerTurn === "player1"
+                      ? `tile-` + player1Symbol
+                      : `tile-` + player2Symbol
+                  }`}
+                >
+                  {playerTurn === "player1" ? player1Name : player2Name}
+                </span>{" "}
+                Turn
               </span>
-              <span className="remained-text-turn"> Turn</span>
             </>
           )}
         </section>
