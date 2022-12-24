@@ -130,6 +130,7 @@
   }
   .error-msg {
     font-size: 12px;
-    width: 200px;
+    width: 250px;
+    margin-top: 10px;
   }
 }

@@ -63,6 +63,7 @@
   height: 40px;
   border-radius: 5px;
   margin-top: 10px;
+  margin-left: 50px;
 }
 @media only screen and (max-width: 810px) {
   .play-wrapper {
@@ -83,15 +84,16 @@
     justify-self: center;
   }
   .play-info {
-    margin-left: 70px;
+    margin-left: 20px;
     margin-top: 40px;
     font-size: 30px;
   }
+
   .reset-btn {
-    margin-left: 40px;
+    margin-left: 80px;
   }
   .remained-text {
-    margin-right: 10px;
+    margin-left: 50px;
     font-size: 25px;
   }
   .players-name {
